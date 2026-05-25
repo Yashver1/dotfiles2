@@ -1,0 +1,73 @@
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+
+hyper - s : yabai -m display --focus west
+hyper - g : yabai -m display --focus east
+
+# --- Modify Layout ---
+
+# balance out tree 
+hyper - e : yabai -m space --balance
+
+# rotate layout clockwise
+hyper - r : yabai -m space --rotate 270
+
+# flip along y-axis
+hyper - y : yabai -m space --mirror y-axis
+
+# flip along x-axis
+hyper - x : yabai -m space --mirror x-axis
+
+# --- Moving Windows Around ---
+
+# swap windows within space
+# Note: Since alt is used for focus, consider using shift + alt for swaps
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# maximize a window
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle window float
+alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# toggle window native fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# move window and split (warp)
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - l : yabai -m window --warp east
+
+# move window to display left and right
+hyper - s : yabai -m window --display west; yabai -m display --focus west;
+hyper - g : yabai -m window --display east; yabai -m display --focus east;
+
+# move window to prev and next space
+alt - p : yabai -m window --space prev;
+alt - n : yabai -m window --space next;
+
+# stop/start/restart yabai
+ctrl + alt - q : brew services stop yabai
+ctrl + alt - s : brew services start yabai
+ctrl + alt - r : brew services restart yabai
+
+# send window to desktop and follow focus
+shift + alt - 1 : yabai -m window --space 1 --focus
+shift + alt - 2 : yabai -m window --space 2 --focus
+shift + alt - 3 : yabai -m window --space 3 --focus
+shift + alt - 4 : yabai -m window --space 4 --focus
+shift + alt - 5 : yabai -m window --space 5 --focus
+shift + alt - 6 : yabai -m window --space 6 --focus
+shift + alt - 7 : yabai -m window --space 7 --focus
+
+# resize
+hyper - h : yabai -m window --resize left:-40:0
+hyper - j : yabai -m window --resize bottom:0:40
+hyper - k : yabai -m window --resize top:0:-40
+hyper - l : yabai -m window --resize right:40:0
