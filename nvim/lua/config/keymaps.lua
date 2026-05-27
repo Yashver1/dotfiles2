@@ -13,3 +13,5 @@ vim.keymap.set("n", "<leader>bd", vim.api.nvim_buf_delete, { desc = "Delete curr
 vim.keymap.set("n", "<leader>bd", function()
 	vim.api.nvim_buf_delete(0, { force = true })
 end, { desc = "Delete current buffer" })
+
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
