@@ -1,6 +1,6 @@
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Open line diagnostic" })
+vim.keymap.set("n", "<space>t", vim.diagnostic.open_float, { desc = "Open line diagnostic" })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
