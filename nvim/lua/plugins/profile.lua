@@ -1,16 +1,17 @@
 return {
-	"folke/snacks.nvim",
-	opts = function()
-		Snacks.toggle.profiler():map("<leader>pp")
-		Snacks.toggle.profiler_highlights():map("<leader>ph")
-	end,
-	keys = {
-		{
-			"<leader>ps",
-			function()
-				Snacks.profiler.scratch()
-			end,
-			desc = "Profiler Scratch Bufer",
-		},
-	},
+  "folke/snacks.nvim",
+  enabled = true,
+  opts = function()
+    Snacks.toggle.profiler():map("<leader>pp")
+    Snacks.toggle.profiler_highlights():map("<leader>ph")
+  end,
+  keys = {
+    {
+      "<leader>ps",
+      function()
+        Snacks.profiler.scratch()
+      end,
+      desc = "Profiler Scratch Bufer",
+    },
+  },
 }
