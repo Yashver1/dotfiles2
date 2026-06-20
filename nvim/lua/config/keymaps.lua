@@ -11,7 +11,14 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<leader>bd", vim.api.nvim_buf_delete, { desc = "Delete current buffer" })
 vim.keymap.set("n", "<leader>bd", function()
-	vim.api.nvim_buf_delete(0, { force = true })
+  vim.api.nvim_buf_delete(0, { force = true })
 end, { desc = "Delete current buffer" })
-
+vim.keymap.set('n', '<leader>bo', function()
+  local cur = vim.api.nvim_get_current_buf()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if buf ~= cur and vim.bo[buf].buflisted then
+      pcall(vim.api.nvim_buf_delete, buf, {})
+    end
+  end
+end, { desc = 'Delete other buffers' })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
