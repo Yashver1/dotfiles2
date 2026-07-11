@@ -28,7 +28,6 @@ lsps = {
   rust_analyzer = {},
   tombi = {},
   nil_ls = {},
-  copilot = {},
 }
 
 return {
